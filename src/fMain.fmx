@@ -1,0 +1,166 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 640.000000000000000000
+    Viewport.Height = 480.000000000000000000
+    object pnlGeneratedKey: TPanel
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 630.000000000000000000
+      Size.Height = 196.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btnGenerateANewKey: TButton
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 620.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = '&New key'
+        TextSettings.Trimming = None
+        OnClick = btnGenerateANewKeyClick
+      end
+      object mmoKey: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 620.000000000000000000
+        Size.Height = 122.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnEnter = mmoSelectAllOnEnter
+        Viewport.Width = 616.000000000000000000
+        Viewport.Height = 118.000000000000000000
+      end
+      object btnRefreshCode: TButton
+        Align = Bottom
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 169.000000000000000000
+        Size.Width = 620.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = '&Refresh code'
+        TextSettings.Trimming = None
+        OnClick = btnRefreshCodeClick
+      end
+    end
+    object pnlPascal: TPanel
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 211.000000000000000000
+      Size.Width = 630.000000000000000000
+      Size.Height = 190.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblPascal: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 620.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Pascal (Delphi, Lazarus, FPC, ...)'
+        TabOrder = 0
+      end
+      object mmoPascal: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Align = Client
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 620.000000000000000000
+        Size.Height = 153.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnEnter = mmoSelectAllOnEnter
+        Viewport.Width = 616.000000000000000000
+        Viewport.Height = 149.000000000000000000
+      end
+    end
+  end
+  object OlfAboutDialog1: TOlfAboutDialog
+    Titre = 'Swap Keys Generator'
+    VersionNumero = 'WIP'
+    VersionDate = '20240328'
+    MultiResBitmap = <
+      item
+      end>
+    Images = dmLogo.imgLogo
+    onURLClick = OlfAboutDialog1URLClick
+    Langue = EN
+    Left = 472
+    Top = 304
+  end
+  object MainMenu1: TMainMenu
+    Left = 536
+    Top = 264
+    object mnuMacOS: TMenuItem
+      Text = 'mnuMacOS'
+    end
+    object mnuFile: TMenuItem
+      Text = '&File'
+      object mnuQuit: TMenuItem
+        Locked = True
+        Text = '&Quit'
+        OnClick = mnuQuitClick
+      end
+    end
+    object mnuLanguages: TMenuItem
+      Text = '&Languages'
+    end
+    object mnuHelp: TMenuItem
+      Text = '&Help'
+      object mnuAbout: TMenuItem
+        Locked = True
+        Text = '&About'
+        OnClick = mnuAboutClick
+      end
+    end
+  end
+end
