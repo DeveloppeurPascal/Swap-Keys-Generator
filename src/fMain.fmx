@@ -137,7 +137,7 @@ object frmMain: TfrmMain
   end
   object OlfAboutDialog1: TOlfAboutDialog
     Titre = 'Swap Keys Generator'
-    VersionNumero = 'WIP'
+    VersionNumero = '1.0'
     VersionDate = '20240328'
     MultiResBitmap = <
       item
