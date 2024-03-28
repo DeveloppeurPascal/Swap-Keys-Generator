@@ -143,6 +143,8 @@ object frmMain: TfrmMain
       item
       end>
     Images = dmLogo.imgLogo
+    ImageIndex = 0
+    URL = 'https://swapkeysgenerator.olfsoftware.fr/'
     onURLClick = OlfAboutDialog1URLClick
     Langue = EN
     Left = 472
