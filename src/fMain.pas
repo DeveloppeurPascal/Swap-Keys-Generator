@@ -43,6 +43,7 @@ type
     lblPascal: TLabel;
     mmoPascal: TMemo;
     mnuPascal: TMenuItem;
+    btnPascalSample: TButton;
     procedure FormCreate(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
     procedure OlfAboutDialog1URLClick(const AURL: string);
@@ -51,6 +52,7 @@ type
     procedure btnRefreshCodeClick(Sender: TObject);
     procedure mmoSelectAllOnEnter(Sender: TObject);
     procedure mnuLanguageCodeClick(Sender: TObject);
+    procedure btnPascalSampleClick(Sender: TObject);
   private
     { Déclarations privées }
     FFreezePAramsSetValue: boolean;
@@ -110,6 +112,12 @@ begin
   btnRefreshCodeClick(btnRefreshCode);
 end;
 
+procedure TfrmMain.btnPascalSampleClick(Sender: TObject);
+begin
+  url_Open_In_Browser
+    ('https://github.com/DeveloppeurPascal/librairies/tree/master/samples/RTL.CryptDecrypt/SwapCryptDecryptSample');
+end;
+
 procedure TfrmMain.btnRefreshCodeClick(Sender: TObject);
 var
   i: integer;
@@ -161,15 +169,23 @@ var
   s: string;
 begin
   mmoPascal.Lines.Clear;
-  mmoPascal.Lines.add('var Key:array of byte;');
-  s := 'Key := [';
-  for i := 0 to Key.count - 1 do
-    if i > 0 then
-      s := s + ', ' + Key[i].tostring
-    else
-      s := s + Key[i].tostring;
-  s := s + '];';
-  mmoPascal.Lines.add(s);
+  if mnuPascal.IsChecked then
+  begin
+    mmoPascal.Lines.add('// declaration');
+    mmoPascal.Lines.add('var Key:array of byte;');
+    mmoPascal.Lines.add('// implementation');
+    s := 'Key := [';
+    for i := 0 to Key.count - 1 do
+      if i > 0 then
+        s := s + ', ' + Key[i].tostring
+      else
+        s := s + Key[i].tostring;
+    s := s + '];';
+    mmoPascal.Lines.add(s);
+    mmoPascal.Lines.add('// sample of use available at');
+    mmoPascal.Lines.add
+      ('// https://github.com/DeveloppeurPascal/librairies/tree/master/samples/RTL.CryptDecrypt/SwapCryptDecryptSample');
+  end;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
