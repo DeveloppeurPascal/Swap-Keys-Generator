@@ -7,7 +7,7 @@
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">SwapKeysGenerator</ProjectName>
-        <TargetedPlatforms>693267</TargetedPlatforms>
+        <TargetedPlatforms>135171</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>SwapKeysGenerator.dpr</MainSource>
     </PropertyGroup>
@@ -236,12 +236,22 @@
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+        <Icon_MainIcon>..\assets\icons\SwapKeysGeneratorIcon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\SwapKeysGeneratorIcon.icns</Icns_MainIcns>
+        <Manifest_File>(vide)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
         <DCC_UsePackage>bindengine;IndyIPCommon;dbxcds;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;FireDACMSSQLDriver;FireDACODBCDriver;rtl;DBXSqliteDriver;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;DBXOracleDriver;bindcompfmx;ibmonitor;FireDACASADriver;DBXMySQLDriver;DataSnapCommon;fmxase;DataSnapIndy10ServerTransport;DBXInterBaseDriver;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;CloudService;soapserver;FireDACIBDriver;DataSnapServer;fmx;DbxCommonDriver;FireDACCommonODBC;emsclient;IndyProtocols;FmxTeeUI;DBXFirebirdDriver;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxdae;IndySystem;ibxbindings;FireDACCommon;DataSnapServerMidas;bindcompdbx;FireDACMySQLDriver;DataSnapFireDAC;DBXInformixDriver;fmxobj;DataSnapNativeClient;FireDACCommonDriver;IndyIPClient;inetdb;fmxFireDAC;dbrtl;FireDACOracleDriver;FireDACMongoDBDriver;FireDACTDataDriver;bindcomp;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;DBXSybaseASADriver;FMXTee;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+        <Icon_MainIcon>..\assets\icons\SwapKeysGeneratorIcon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\SwapKeysGeneratorIcon.icns</Icns_MainIcns>
+        <Manifest_File>(vide)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>bdertl;vclie;bindengine;IndyIPCommon;FMXfrCoreLibrary29;FMX_FlexCel_Components;epivet;dbxcds;vcledge;fcxp29;frLanguageSlovak29;FMXfrLanguageLatvian29;FlexCel_Pdf;FMXfrLanguageDutch29;frLanguageArabic29;FMXfsTee29;dbexpress;frLanguageCatalon29;frLanguageCzech29;inet;vcltouch;FMX_FlexCel_Core;FireDACDBXDriver;FMXfrLanguageTurkish29;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageCzech29;frLanguageItalian29;frxPDF29;FMXfsADO29;frxe29;htmleditfm_xe12;fsDB29;vclFireDAC;FireDACODBCDriver;emsserverresource;frLanguageDanish29;TMSCryptoPkgDEDXE15;ResizeKitPKD29;frxTee29;rtl;FMXfrLanguageGerman29;frLanguageLithuanian29;DBXSqliteDriver;frLanguageRussian29;traduction;DBXSybaseASEDriver;FMXfrLanguageBrazil229;inetdbxpress;FireDAC;Olf.VCL.AboutBoxPackage;xmlrtl;ibxpress;dsnap;frLanguageSerbian29;FireDACDb2Driver;DBXOracleDriver;vclib;FMXfrLanguageFrench29;DatasnapConnectorsFreePascal;vcldbx;frxQueryBuilder29;frxIntIOIndy29;fqbADO29;FMXfsIBX29;FMXfrxCDS29;FMXTMSFNCCorePkgDXE15;crystal_rdc;frLocalizationLibrary29;bindcompvclwinx;FMXfcxcd29;FMXfrLanguageArabic29;bindcompfmx;TMSVCLUIPackPkgExDXE15;frLanguageGerman29;FMXfrLanguageItalian29;ibmonitor;frLanguageIndonesian29;FMXfrLanguageSpanish29;FireDACASADriver;Tee;FMXfcxed29;htmlcompfm_xe12;vclactnband;TMSVCLUIPackPkgXlsDXE15;FMXfrxDB29;FireDACInfxDriver;DBXMySQLDriver;FMXfs29;fsADO29;VclSmp;DataSnapCommon;fmxase;FMXfrLanguageFarsi29;TMSVCLUIPackPkgWizDXE15;FMXfrLanguageChinese29;FlexCel_XlsAdapter;frxcs29;FMXfrLanguageJapanese29;frLanguageSlovene29;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;frADODataLibrary29;vcldsnap;DBXInterBaseDriver;Olf.VCL.Extend;frLanguageBrazil129;vcldb;FMXfrLanguageCatalon29;StyledComponents;FMXfrLanguageHungarian29;crystal_viewver;frxIntIO29;fsIBX29;FMXfrx29;frLanguageJapanese29;FMXfrLanguageDanish29;FMXfrLanguageSlovene29;vcl;Olf.FMX.Extend;DataSnapClient;fsFD29;FMXfrLanguageSwedish29;frLanguageDutch29;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;frLanguageBulgarian29;bindcompvcl;FMXfrLanguageBrazil29;CloudService;FMXfrLocalizationLibrary29;frGraphicsLibrary29;FMXfrLanguageRomanian29;soapserver;FireDACIBDriver;vclwinx;DataSnapServer;fs29;FMXfrxTee29;fmx;FMXfrLanguageSlovak29;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;fsTee29;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;TMSCryptoPkgDXE15;frxADOQueryBuilder29;FmxTeeUI;htmlcomp_xe12;frLanguageHungarian29;InstantBDExpress;frxIBXQueryBuilder29;FMXfrLanguageUkrainian29;DBXFirebirdDriver;SKIA_FlexCel_Core;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;frCoreLibrary29;frxFDQueryBuilder29;frLanguageBrazil29;FMXfrxDBX29;FMXfrLanguageSwiss29;fmxdae;FMXfrLanguageBrazil129;fcxpTee29;frxIBX29;FMXfsDB29;fqbFD29;frLanguageSwiss29;IndySystem;frLanguageSwedish29;ibxbindings;FMXfrLanguagePolish29;frLanguageUkrainian29;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;fcx29;FMXfrLanguageLithuanian29;FireDACMySQLDriver;fqb29;VCL_FlexCel_Components;FMXfcxpTeed29;frLanguageFrench29;TMSVCLUIPackPkgDXE15;frxSM29;vclimg;DataSnapFireDAC;frFDDataLibrary29;FMXfrLanguageRussian29;DBXInformixDriver;frLanguageFarsi29;fmxobj;bindcompvclsmp;DataSnapNativeClient;frx29;FMXfrLanguageHebrew29;FMXfrLanguageCroatian29;frLanguageChinese29;hclcore_xe12;htmledit_xe12;FMXTMSFNCUIPackPkgDXE15;FMXfrxADO29;frLanguageHebrew29;FMXfrLanguageBulgarian29;FlexCel_Report;emshosting;frxDB29;fqbDBX29;FireDACCommonDriver;FMXfcxd29;IndyIPClient;frxHTML29;frLanguageTaiwan29;FMXfrxIBX29;emsedge;frxDBXQueryBuilder29;frLanguageRomanian29;Olf.FMX.AboutBoxPackage;inetdb;frLanguageBrazil229;fmxFireDAC;frLanguageCroatian29;FMXfrxFD29;DBXOdbcDriver;FMXfrLanguageTaiwan29;dbrtl;FireDACOracleDriver;Skia.Package.FMX;FMXfrLanguagePortuguese29;TeeDB;FireDACMSAccDriver;DataSnapConnectors;frLanguageTurkish29;fcxe29;FireDACMongoDBDriver;frLanguageGreek29;FireDACTDataDriver;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;FlexCel_Core;bindcomp;fcxc29;frLanguageLatvian29;IndyCore;RESTBackendComponents;frLanguageSpanish29;FireDACADSDriver;fqbIBX29;RESTComponents;frxFD29;IndyIPServer;dsnapxml;adortl;htmleditcore_xe12;dsnapcon;DataSnapProviderClient;FMXfrLanguageSerbian29;FMXfrxe29;frxADO29;DBXDb2Driver;FMXfrLanguageIndonesian29;frLanguagePortuguese29;frLanguagePolish29;frxDBX29;DBXSybaseASADriver;ramtech;VCLTMSFNCCloudPackPkgDXE15;FMXfrLanguageGreek29;FMXTee;FMXfcxpd29;VCLTMSFNCCorePkgDXE15;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
@@ -251,8 +261,11 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\assets\icons\SwapKeysGeneratorIcon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\SwapKeysGeneratorIcon-150x150.png</UWP_DelphiLogo150>
+        <Icon_MainIcon>..\assets\icons\SwapKeysGeneratorIcon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\SwapKeysGeneratorIcon.icns</Icns_MainIcns>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vclie;bindengine;IndyIPCommon;FMXfrCoreLibrary29;FMX_FlexCel_Components;dbxcds;vcledge;fcxp29;frLanguageSlovak29;FMXfrLanguageLatvian29;FlexCel_Pdf;FMXfrLanguageDutch29;frLanguageArabic29;FMXfsTee29;dbexpress;frLanguageCatalon29;frLanguageCzech29;inet;vcltouch;FMX_FlexCel_Core;FireDACDBXDriver;FMXfrLanguageTurkish29;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageCzech29;frLanguageItalian29;frxPDF29;FMXfsADO29;frxe29;fsDB29;vclFireDAC;FireDACODBCDriver;emsserverresource;frLanguageDanish29;ResizeKitPKD29;frxTee29;rtl;FMXfrLanguageGerman29;frLanguageLithuanian29;DBXSqliteDriver;frLanguageRussian29;DBXSybaseASEDriver;FMXfrLanguageBrazil229;inetdbxpress;FireDAC;Olf.VCL.AboutBoxPackage;xmlrtl;ibxpress;dsnap;frLanguageSerbian29;FireDACDb2Driver;DBXOracleDriver;vclib;FMXfrLanguageFrench29;DatasnapConnectorsFreePascal;frxQueryBuilder29;frxIntIOIndy29;fqbADO29;FMXfsIBX29;FMXfrxCDS29;FMXTMSFNCCorePkgDXE15;frLocalizationLibrary29;bindcompvclwinx;FMXfcxcd29;FMXfrLanguageArabic29;bindcompfmx;TMSVCLUIPackPkgExDXE15;frLanguageGerman29;FMXfrLanguageItalian29;ibmonitor;frLanguageIndonesian29;FMXfrLanguageSpanish29;FireDACASADriver;Tee;FMXfcxed29;vclactnband;TMSVCLUIPackPkgXlsDXE15;FMXfrxDB29;FireDACInfxDriver;DBXMySQLDriver;FMXfs29;fsADO29;VclSmp;DataSnapCommon;fmxase;FMXfrLanguageFarsi29;FMXfrLanguageChinese29;FlexCel_XlsAdapter;frxcs29;FMXfrLanguageJapanese29;frLanguageSlovene29;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;frADODataLibrary29;vcldsnap;DBXInterBaseDriver;frLanguageBrazil129;vcldb;FMXfrLanguageCatalon29;StyledComponents;FMXfrLanguageHungarian29;frxIntIO29;fsIBX29;FMXfrx29;frLanguageJapanese29;FMXfrLanguageDanish29;FMXfrLanguageSlovene29;vcl;DataSnapClient;fsFD29;FMXfrLanguageSwedish29;frLanguageDutch29;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;frLanguageBulgarian29;bindcompvcl;FMXfrLanguageBrazil29;CloudService;FMXfrLocalizationLibrary29;frGraphicsLibrary29;FMXfrLanguageRomanian29;soapserver;FireDACIBDriver;vclwinx;DataSnapServer;fs29;FMXfrxTee29;fmx;FMXfrLanguageSlovak29;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;fsTee29;appanalytics;IndyProtocols;vclx;frxADOQueryBuilder29;FmxTeeUI;frLanguageHungarian29;frxIBXQueryBuilder29;FMXfrLanguageUkrainian29;DBXFirebirdDriver;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;frCoreLibrary29;frxFDQueryBuilder29;frLanguageBrazil29;FMXfrxDBX29;FMXfrLanguageSwiss29;fmxdae;FMXfrLanguageBrazil129;fcxpTee29;frxIBX29;FMXfsDB29;fqbFD29;frLanguageSwiss29;IndySystem;frLanguageSwedish29;ibxbindings;FMXfrLanguagePolish29;frLanguageUkrainian29;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;fcx29;FMXfrLanguageLithuanian29;FireDACMySQLDriver;fqb29;VCL_FlexCel_Components;FMXfcxpTeed29;frLanguageFrench29;TMSVCLUIPackPkgDXE15;frxSM29;vclimg;DataSnapFireDAC;frFDDataLibrary29;FMXfrLanguageRussian29;DBXInformixDriver;frLanguageFarsi29;fmxobj;bindcompvclsmp;DataSnapNativeClient;frx29;FMXfrLanguageHebrew29;FMXfrLanguageCroatian29;frLanguageChinese29;FMXTMSFNCUIPackPkgDXE15;FMXfrxADO29;frLanguageHebrew29;FMXfrLanguageBulgarian29;FlexCel_Report;emshosting;frxDB29;fqbDBX29;FireDACCommonDriver;FMXfcxd29;IndyIPClient;frxHTML29;frLanguageTaiwan29;FMXfrxIBX29;emsedge;frxDBXQueryBuilder29;frLanguageRomanian29;Olf.FMX.AboutBoxPackage;inetdb;frLanguageBrazil229;fmxFireDAC;frLanguageCroatian29;FMXfrxFD29;DBXOdbcDriver;FMXfrLanguageTaiwan29;dbrtl;FireDACOracleDriver;FMXfrLanguagePortuguese29;TeeDB;FireDACMSAccDriver;DataSnapConnectors;frLanguageTurkish29;fcxe29;FireDACMongoDBDriver;frLanguageGreek29;FireDACTDataDriver;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;FlexCel_Core;bindcomp;fcxc29;frLanguageLatvian29;IndyCore;RESTBackendComponents;frLanguageSpanish29;FireDACADSDriver;fqbIBX29;RESTComponents;frxFD29;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;FMXfrLanguageSerbian29;FMXfrxe29;frxADO29;DBXDb2Driver;FMXfrLanguageIndonesian29;frLanguagePortuguese29;frLanguagePolish29;frxDBX29;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXfrLanguageGreek29;FMXTee;FMXfcxpd29;VCLTMSFNCCorePkgDXE15;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
@@ -262,8 +275,11 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\assets\icons\SwapKeysGeneratorIcon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\SwapKeysGeneratorIcon-150x150.png</UWP_DelphiLogo150>
+        <Icon_MainIcon>..\assets\icons\SwapKeysGeneratorIcon.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\SwapKeysGeneratorIcon.icns</Icns_MainIcns>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -278,6 +294,8 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -334,6 +352,12 @@
                 <Source>
                     <Source Name="MainSource">SwapKeysGenerator.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Package Serveurs Office 2000 Embarcadero C++Builder</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Package Serveurs Office XP Embarcadero C++Builder</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Composants Microsoft Office 2000 Sample Automation Server Wrapper</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Composants Microsoft Office XP Sample Automation Server Wrapper</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
@@ -348,6 +372,34 @@
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\SwapKeysGeneratorIcon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\SwapKeysGeneratorIcon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\SwapKeysGeneratorIcon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\assets\icons\SwapKeysGeneratorIcon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1309,10 +1361,10 @@
                 <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">True</Platform>
-                <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice64">True</Platform>
-                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSDevice64">False</Platform>
+                <Platform value="iOSSimARM64">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
