@@ -25,7 +25,7 @@ uses
   System.Generics.Collections;
 
 type
-  TForm1 = class(TForm)
+  TfrmMain = class(TForm)
     OlfAboutDialog1: TOlfAboutDialog;
     MainMenu1: TMainMenu;
     mnuMacOS: TMenuItem;
@@ -42,6 +42,7 @@ type
     pnlPascal: TPanel;
     lblPascal: TLabel;
     mmoPascal: TMemo;
+    mnuPascal: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure mnuAboutClick(Sender: TObject);
     procedure OlfAboutDialog1URLClick(const AURL: string);
@@ -49,8 +50,10 @@ type
     procedure btnGenerateANewKeyClick(Sender: TObject);
     procedure btnRefreshCodeClick(Sender: TObject);
     procedure mmoSelectAllOnEnter(Sender: TObject);
+    procedure mnuLanguageCodeClick(Sender: TObject);
   private
     { Déclarations privées }
+    FFreezePAramsSetValue: boolean;
   protected
     procedure InitMainFormCaption;
     procedure InitAboutDialogBox;
@@ -60,16 +63,17 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMain: TfrmMain;
 
 implementation
 
 {$R *.fmx}
 
 uses
-  u_urlOpen;
+  u_urlOpen,
+  Olf.RTL.Params;
 
-procedure TForm1.btnGenerateANewKeyClick(Sender: TObject);
+procedure TfrmMain.btnGenerateANewKeyClick(Sender: TObject);
 var
   i: byte;
   List, Keys: TList<byte>;
@@ -106,7 +110,7 @@ begin
   btnRefreshCodeClick(btnRefreshCode);
 end;
 
-procedure TForm1.btnRefreshCodeClick(Sender: TObject);
+procedure TfrmMain.btnRefreshCodeClick(Sender: TObject);
 var
   i: integer;
   Key: TList<byte>;
@@ -151,7 +155,7 @@ begin
   end;
 end;
 
-procedure TForm1.FillPascalCode(const Key: TList<byte>);
+procedure TfrmMain.FillPascalCode(const Key: TList<byte>);
 var
   i: integer;
   s: string;
@@ -168,7 +172,9 @@ begin
   mmoPascal.Lines.add(s);
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
+var
+  i: integer;
 begin
   InitMainFormCaption;
   InitAboutDialogBox;
@@ -180,9 +186,20 @@ begin
 {$ENDIF}
   mnuMacOS.Visible := (mnuMacOS.ItemsCount > 0);
   mnuHelp.Visible := (mnuHelp.ItemsCount > 0);
+
+  FFreezePAramsSetValue := true;
+  try
+    for i := 0 to mnuLanguages.ItemsCount - 1 do
+      repeat
+        mnuLanguageCodeClick(mnuLanguages.Items[i]);
+      until (mnuLanguages.Items[i].IsChecked = TParams.getValue
+        (mnuLanguages.Items[i].name, true));
+  finally
+    FFreezePAramsSetValue := false;
+  end;
 end;
 
-procedure TForm1.InitAboutDialogBox;
+procedure TfrmMain.InitAboutDialogBox;
 begin
   // TODO : traduire texte(s)
   OlfAboutDialog1.Licence.Text :=
@@ -214,7 +231,7 @@ begin
     'To find out more, visit https://swapkeysgenerator.olfsoftware.fr';
 end;
 
-procedure TForm1.InitMainFormCaption;
+procedure TfrmMain.InitMainFormCaption;
 begin
 {$IFDEF DEBUG}
   caption := '[DEBUG] ';
@@ -225,24 +242,51 @@ begin
     OlfAboutDialog1.VersionNumero;
 end;
 
-procedure TForm1.mmoSelectAllOnEnter(Sender: TObject);
+procedure TfrmMain.mmoSelectAllOnEnter(Sender: TObject);
 begin
   // TODO : add a QP issue because the SelectAll don't select all lines (problem of string size)
   if Sender is TMemo then
     (Sender as TMemo).SelectAll;
 end;
 
-procedure TForm1.mnuAboutClick(Sender: TObject);
+procedure TfrmMain.mnuAboutClick(Sender: TObject);
 begin
   OlfAboutDialog1.Execute;
 end;
 
-procedure TForm1.mnuQuitClick(Sender: TObject);
+procedure TfrmMain.mnuLanguageCodeClick(Sender: TObject);
+var
+  mnu: TMenuItem;
+  pnlName: string;
+  FmxO: TFMXObject;
+begin
+  if Sender is TMenuItem then
+  begin
+    mnu := Sender as TMenuItem;
+
+    mnu.IsChecked := not mnu.IsChecked;
+
+    if not FFreezePAramsSetValue then
+      TParams.setValue(mnu.name, mnu.IsChecked);
+
+    pnlName := 'pnl' + string(mnu.name).Substring('mnu'.length).ToLower;
+
+    for FmxO in VertScrollBox1.Content.Children do
+      if (FmxO is TPanel) and (string((FmxO as TPanel).name).ToLower = pnlName)
+      then
+      begin
+        (FmxO as TPanel).Visible := mnu.IsChecked;
+        break;
+      end;
+  end;
+end;
+
+procedure TfrmMain.mnuQuitClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TForm1.OlfAboutDialog1URLClick(const AURL: string);
+procedure TfrmMain.OlfAboutDialog1URLClick(const AURL: string);
 begin
   url_Open_In_Browser(AURL);
 end;
@@ -252,5 +296,6 @@ initialization
 {$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := true;
 {$ENDIF}
+TParams.InitDefaultFileNameV2('OlfSoftware', 'SwapKeysGen');
 
 end.

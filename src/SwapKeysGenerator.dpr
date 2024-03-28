@@ -3,7 +3,7 @@ program SwapKeysGenerator;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  fMain in 'fMain.pas' {Form1},
+  fMain in 'fMain.pas' {frmMain},
   uDMLogo in 'uDMLogo.pas' {dmLogo: TDataModule},
   Olf.FMX.AboutDialog in '..\lib-externes\AboutDialog-Delphi-Component\sources\Olf.FMX.AboutDialog.pas',
   Olf.FMX.AboutDialogForm in '..\lib-externes\AboutDialog-Delphi-Component\sources\Olf.FMX.AboutDialogForm.pas' {OlfAboutDialogForm},
@@ -14,7 +14,7 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TdmLogo, dmLogo);
   Application.Run;
 end.

@@ -1,4 +1,4 @@
-object Form1: TForm1
+object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Form1'
@@ -153,6 +153,11 @@ object Form1: TForm1
     end
     object mnuLanguages: TMenuItem
       Text = '&Languages'
+      object mnuPascal: TMenuItem
+        Locked = True
+        Text = '&Pascal'
+        OnClick = mnuLanguageCodeClick
+      end
     end
     object mnuHelp: TMenuItem
       Text = '&Help'
