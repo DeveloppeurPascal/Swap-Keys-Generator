@@ -4,3 +4,4 @@
 * mise à jour des chemins d'inclusion des unités suite à changement d'arborescence dans la boite de dialogue "à propos"
 * remplacement de l'algorithme de génération par la fonction maintenant disponible dans la classe de base
 * déploiement de la version 1.1 - 20240426
+* diverses optimisations et changements pour préparer les versions de générateurs de clés pour XOR, Shift et ICB
