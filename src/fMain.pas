@@ -50,18 +50,16 @@ type
     procedure mnuQuitClick(Sender: TObject);
     procedure btnGenerateANewKeyClick(Sender: TObject);
     procedure btnRefreshCodeClick(Sender: TObject);
-    procedure mmoSelectAllOnEnter(Sender: TObject);
     procedure mnuLanguageCodeClick(Sender: TObject);
     procedure btnPascalSampleClick(Sender: TObject);
   private
-    { Déclarations privées }
     FFreezePAramsSetValue: boolean;
   protected
     procedure InitMainFormCaption;
     procedure InitAboutDialogBox;
     procedure FillPascalCode(const Key: TList<byte>);
+    procedure mmoSelectAllOnEnter(Sender: TObject);
   public
-    { Déclarations publiques }
   end;
 
 var
@@ -78,7 +76,7 @@ uses
 
 procedure TfrmMain.btnGenerateANewKeyClick(Sender: TObject);
 var
-  i: byte;
+  i: integer;
   Key: TByteDynArray;
   s: string;
 begin
@@ -181,6 +179,10 @@ var
 begin
   InitMainFormCaption;
   InitAboutDialogBox;
+
+  for i := 0 to ComponentCount - 1 do
+    if Components[i] is TMemo then
+      (Components[i] as TMemo).OnEnter := mmoSelectAllOnEnter;
 
   // Menu
 {$IF Defined(MACOS) and not Defined(IOS)}
