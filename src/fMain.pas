@@ -73,41 +73,25 @@ implementation
 
 uses
   u_urlOpen,
-  Olf.RTL.Params;
+  Olf.RTL.Params,
+  Olf.RTL.CryptDecrypt;
 
 procedure TfrmMain.btnGenerateANewKeyClick(Sender: TObject);
 var
   i: byte;
-  List, Keys: TList<byte>;
-  idx: byte;
+  Key: TByteDynArray;
   s: string;
 begin
   randomize;
-  List := TList<byte>.Create;
-  try
-    for i := 0 to 255 do
-      List.add(i);
-    Keys := TList<byte>.Create;
-    try
-      for i := 0 to 255 do
-      begin
-        idx := random(List.count);
-        Keys.add(List[idx]);
-        List.Delete(idx);
-      end;
-      s := '';
-      for i := 0 to 255 do
-        if (i > 0) then
-          s := s + ', ' + Keys[i].tostring
-        else
-          s := Keys[i].tostring;
-      mmoKey.Text := s;
-    finally
-      Keys.free;
-    end;
-  finally
-    List.free;
-  end;
+  Key := TOlfCryptDecrypt.GenSwapKey;
+
+  s := '';
+  for i := 0 to length(Key) - 1 do
+    if (i > 0) then
+      s := s + ', ' + Key[i].tostring
+    else
+      s := Key[i].tostring;
+  mmoKey.Text := s;
 
   btnRefreshCodeClick(btnRefreshCode);
 end;
@@ -126,6 +110,9 @@ var
   NbAvailable: TList<boolean>;
   nb: integer;
 begin
+  if mmoKey.Text.IsEmpty then
+    btnGenerateANewKeyClick(self);
+
   tab := mmoKey.Text.replace(' ', '').Split([',']);
   if length(tab) <> 256 then
     raise Exception.Create('Wrong number of bytes in the list. (' + length(tab)
