@@ -247,7 +247,6 @@ end;
 
 procedure TfrmMain.mmoSelectAllOnEnter(Sender: TObject);
 begin
-  // TODO : add a QP issue because the SelectAll don't select all lines (problem of string size)
   if Sender is TMemo then
     (Sender as TMemo).SelectAll;
 end;
