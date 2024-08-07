@@ -4,6 +4,7 @@ object frmMain: TfrmMain
   Caption = 'Form1'
   ClientHeight = 480
   ClientWidth = 640
+  Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -58,8 +59,8 @@ object frmMain: TfrmMain
         Size.Height = 122.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 620.000000000000000000
-        Viewport.Height = 122.000000000000000000
+        Viewport.Width = 616.000000000000000000
+        Viewport.Height = 118.000000000000000000
       end
       object btnRefreshCode: TButton
         Align = Bottom
@@ -109,7 +110,7 @@ object frmMain: TfrmMain
           Size.Width = 80.000000000000000000
           Size.Height = 22.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           Text = 'Sample'
           TextSettings.Trimming = None
           OnClick = btnPascalSampleClick
@@ -128,8 +129,8 @@ object frmMain: TfrmMain
         Size.Height = 148.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Viewport.Width = 620.000000000000000000
-        Viewport.Height = 148.000000000000000000
+        Viewport.Width = 616.000000000000000000
+        Viewport.Height = 144.000000000000000000
       end
     end
   end
