@@ -326,6 +326,47 @@ initialization
 {$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := true;
 {$ENDIF}
-TParams.InitDefaultFileNameV2('OlfSoftware', 'SwapKeysGen');
+TParams.InitDefaultFileNameV2('OlfSoftware', 'SwapKeysGen', false);
+{$IF Defined(RELEASE)}
+TParams.onCryptProc := function(Const AParams: string): TStream
+  var
+    Keys: TByteDynArray;
+    ParStream: TStringStream;
+  begin
+    ParStream := TStringStream.Create(AParams);
+    try
+{$I '..\_PRIVATE\src\paramsxorkey.inc'}
+      result := TOlfCryptDecrypt.XORCrypt(ParStream, Keys);
+    finally
+      ParStream.free;
+    end;
+  end;
+TParams.onDecryptProc := function(Const AStream: TStream): string
+  var
+    Keys: TByteDynArray;
+    Stream: TStream;
+    StringStream: TStringStream;
+  begin
+{$I '..\_PRIVATE\src\paramsxorkey.inc'}
+    result := '';
+    Stream := TOlfCryptDecrypt.XORdeCrypt(AStream, Keys);
+    try
+      if assigned(Stream) and (Stream.Size > 0) then
+      begin
+        StringStream := TStringStream.Create;
+        try
+          Stream.Position := 0;
+          StringStream.CopyFrom(Stream);
+          result := StringStream.DataString;
+        finally
+          StringStream.free;
+        end;
+      end;
+    finally
+      Stream.free;
+    end;
+  end;
+{$ENDIF}
+TParams.load;
 
 end.
