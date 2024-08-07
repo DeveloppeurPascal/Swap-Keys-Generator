@@ -270,8 +270,8 @@ begin
     slinebreak + slinebreak + '**********************' + slinebreak +
     '* User support' + slinebreak + slinebreak +
     'If you have any questions or require additional functionality, please leave us a message on the application''s website or on its code repository.'
-    + slinebreak + slinebreak +
-    'To find out more, visit https://swapkeysgenerator.olfsoftware.fr';
+    + slinebreak + slinebreak + 'To find out more, visit ' +
+    OlfAboutDialog1.URL;
 end;
 
 procedure TfrmMain.mmoSelectAllOnEnter(Sender: TObject);
