@@ -94,7 +94,6 @@ type
   private
     FFreezePAramsSetValue: boolean;
   protected
-    procedure InitMainFormCaption;
     procedure InitAboutDialogBox;
     procedure FillPascalCode(const Key: TList<byte>);
     procedure mmoSelectAllOnEnter(Sender: TObject);
@@ -216,7 +215,6 @@ procedure TfrmMain.FormCreate(Sender: TObject);
 var
   i: integer;
 begin
-  InitMainFormCaption;
   InitAboutDialogBox;
 
   for i := 0 to ComponentCount - 1 do
@@ -273,17 +271,6 @@ begin
     'If you have any questions or require additional functionality, please leave us a message on the application''s website or on its code repository.'
     + slinebreak + slinebreak +
     'To find out more, visit https://swapkeysgenerator.olfsoftware.fr';
-end;
-
-procedure TfrmMain.InitMainFormCaption;
-begin
-{$IFDEF DEBUG}
-  caption := '[DEBUG] ';
-{$ELSE}
-  caption := '';
-{$ENDIF}
-  caption := caption + OlfAboutDialog1.Titre + ' v' +
-    OlfAboutDialog1.VersionNumero;
 end;
 
 procedure TfrmMain.mmoSelectAllOnEnter(Sender: TObject);
