@@ -1,7 +1,7 @@
 ﻿(* C2PP
   ***************************************************************************
 
-  Swap Keys Generator
+  FMX Tools Starter Kit
 
   Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 
@@ -15,10 +15,7 @@
 
   ***************************************************************************
 
-  Generator of reversible 256-byte blocks for encrypting data by exchanging
-  values. Each byte in the final set is represented only once.
-
-  If you're developing under Delphi or Pascal in general, you can use these blocks with the TOlfCryptDecrypt.SwapCrypt and TOlfCryptDecrypt.SwapDecrypt functions in the Olf.RTL.CryptDecrypt unit from https://github.com/DeveloppeurPascal/librairies/
+  A starter kit for your FireMonkey projects in Delphi.
 
   ***************************************************************************
 
@@ -26,14 +23,14 @@
   Patrick PREMARTIN
 
   Site :
-  https://swapkeysgenerator.olfsoftware.fr/
+  https://fmxtoolsstarterkit.developpeur-pascal.fr/
 
   Project site :
-  https://github.com/DeveloppeurPascal/Swap-Keys-Generator
+  https://github.com/DeveloppeurPascal/FMX-Tools-Starter-Kit
 
   ***************************************************************************
-  File last update : 2025-05-23T11:28:10.847+02:00
-  Signature : b8f56893e3f40153adfcecf0eea6ffba93eea920
+  File last update : 2025-05-16T19:43:46.000+02:00
+  Signature : 9dbd1b5ddea4625a4f0623bb5f0f41b8bf1b4b83
   ***************************************************************************
 *)
 
@@ -42,19 +39,62 @@ program SwapKeysGenerator;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  fMain in 'fMain.pas' {frmMain},
-  uDMLogo in 'uDMLogo.pas' {dmLogo: TDataModule},
+  uConfig in '..\lib-externes\FMX-Tools-Starter-Kit\src\uConfig.pas',
+  uConsts in 'uConsts.pas',
+  uDMAboutBox in '..\lib-externes\FMX-Tools-Starter-Kit\src\uDMAboutBox.pas' {AboutBox: TDataModule},
+  uDMAboutBoxLogoStorrage in 'uDMAboutBoxLogoStorrage.pas' {dmAboutBoxLogo: TDataModule},
+  uTranslate in '..\lib-externes\FMX-Tools-Starter-Kit\src\uTranslate.pas',
+  uTxtAboutDescription in 'uTxtAboutDescription.pas',
+  uTxtAboutLicense in 'uTxtAboutLicense.pas',
+  Olf.FMX.AboutDialog in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas',
+  Olf.FMX.AboutDialogForm in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas' {OlfAboutDialogForm},
+  Olf.FMX.SelectDirectory in '..\lib-externes\Delphi-FMXExtend-Library\src\Olf.FMX.SelectDirectory.pas',
+  Olf.RTL.CryptDecrypt in '..\lib-externes\librairies\src\Olf.RTL.CryptDecrypt.pas',
+  Olf.RTL.Language in '..\lib-externes\librairies\src\Olf.RTL.Language.pas',
   Olf.RTL.Params in '..\lib-externes\librairies\src\Olf.RTL.Params.pas',
   u_urlOpen in '..\lib-externes\librairies\src\u_urlOpen.pas',
-  Olf.RTL.CryptDecrypt in '..\lib-externes\librairies\src\Olf.RTL.CryptDecrypt.pas',
-  Olf.FMX.AboutDialog in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas',
-  Olf.FMX.AboutDialogForm in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas' {OlfAboutDialogForm};
+  _TFrameAncestor in '..\lib-externes\FMX-Tools-Starter-Kit\src\_TFrameAncestor.pas' {__TFrameAncestor: TFrame},
+  _TFormAncestor in '..\lib-externes\FMX-Tools-Starter-Kit\src\_TFormAncestor.pas' {__TFormAncestor},
+  _MainFormAncestor in '..\lib-externes\FMX-Tools-Starter-Kit\src\_MainFormAncestor.pas' {__MainFormAncestor},
+  uDocumentsAncestor in '..\lib-externes\FMX-Tools-Starter-Kit\src\uDocumentsAncestor.pas',
+  Olf.RTL.Streams in '..\lib-externes\librairies\src\Olf.RTL.Streams.pas',
+  Olf.RTL.Maths.Conversions in '..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas',
+  uStyleManagerHelpers in '..\lib-externes\FMX-Tools-Starter-Kit\src\uStyleManagerHelpers.pas',
+  Olf.RTL.SystemAppearance in '..\lib-externes\librairies\src\Olf.RTL.SystemAppearance.pas',
+  fToolsStylesDialog in '..\lib-externes\FMX-Tools-Starter-Kit\src\fToolsStylesDialog.pas' {frmToolsStylesDialog},
+  fToolsLanguagesDialog in '..\lib-externes\FMX-Tools-Starter-Kit\src\fToolsLanguagesDialog.pas' {frmToolsLanguagesDialog},
+  Olf.CilTseg.ClientLib in '..\lib-externes\CilTseg4Delphi\src\Olf.CilTseg.ClientLib.pas',
+  Olf.RTL.Checksum in '..\lib-externes\librairies\src\Olf.RTL.Checksum.pas',
+  u_md5 in '..\lib-externes\librairies\src\u_md5.pas',
+  fCiltsegRegisterOrShowLicense in '..\lib-externes\CilTseg4Delphi\src\FMX\fCiltsegRegisterOrShowLicense.pas' {frmCilTsegRegisterOrShowLicense},
+  fMainForm in 'fMainForm.pas' {MainForm},
+  _StyleContainerAncestor in '..\lib-externes\FMX-Styles-Utils\src\_StyleContainerAncestor.pas' {__StyleContainerAncestor: TDataModule},
+  uStyleManager in '..\lib-externes\FMX-Styles-Utils\src\uStyleManager.pas',
+  uStyleDarkByDefault in '..\lib-externes\FMX-Styles-Utils\samples\DarkLightSampleProject\uStyleDarkByDefault.pas' {StyleDarkByDefault: TDataModule},
+  uStyleLightByDefault in '..\lib-externes\FMX-Styles-Utils\samples\DarkLightSampleProject\uStyleLightByDefault.pas' {StyleLightByDefault: TDataModule},
+  uGetDeviceName in '..\lib-externes\librairies\src\uGetDeviceName.pas',
+  uStyleCoralCrystal in '..\lib-externes\FMX-Tools-Starter-Kit\samples\01-NoDocProject\uStyleCoralCrystal.pas' {dmStyleCoralCrystal: TDataModule},
+  uStyleGoldenGraphite in '..\lib-externes\FMX-Tools-Starter-Kit\samples\01-NoDocProject\uStyleGoldenGraphite.pas' {dmStyleGoldenGraphite: TDataModule},
+  uStyleTransparent in '..\lib-externes\FMX-Tools-Starter-Kit\samples\01-NoDocProject\uStyleTransparent.pas' {dmStyleTransparent: TDataModule},
+  uStyleWin10ModernBlue in '..\lib-externes\FMX-Tools-Starter-Kit\samples\01-NoDocProject\uStyleWin10ModernBlue.pas' {dmStyleWin10ModernBlue: TDataModule},
+  uStyleImpressiveDark in '..\_PRIVATE\src\uStyleImpressiveDark.pas' {StyleImpressiveDark: TDataModule},
+  uStyleImpressiveLight in '..\_PRIVATE\src\uStyleImpressiveLight.pas' {StyleImpressiveLight: TDataModule},
+  uStylePolarDark in '..\_PRIVATE\src\uStylePolarDark.pas' {StylePolarDark: TDataModule},
+  uStylePolarLight in '..\_PRIVATE\src\uStylePolarLight.pas' {StylePolarLight: TDataModule},
+  uConfigHelpers in 'uConfigHelpers.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TdmLogo, dmLogo);
+  Application.CreateForm(TMainForm, MainForm);
+  Application.CreateForm(TdmStyleCoralCrystal, dmStyleCoralCrystal);
+  Application.CreateForm(TdmStyleGoldenGraphite, dmStyleGoldenGraphite);
+  Application.CreateForm(TdmStyleTransparent, dmStyleTransparent);
+  Application.CreateForm(TdmStyleWin10ModernBlue, dmStyleWin10ModernBlue);
+  Application.CreateForm(TdmStyleCoralCrystal, dmStyleCoralCrystal);
+  Application.CreateForm(TdmStyleGoldenGraphite, dmStyleGoldenGraphite);
+  Application.CreateForm(TdmStyleTransparent, dmStyleTransparent);
+  Application.CreateForm(TdmStyleWin10ModernBlue, dmStyleWin10ModernBlue);
   Application.Run;
 end.

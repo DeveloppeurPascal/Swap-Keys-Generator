@@ -1,16 +1,8 @@
-object frmMain: TfrmMain
-  Left = 0
-  Top = 0
-  Caption = 'Form1'
-  ClientHeight = 480
-  ClientWidth = 640
-  Position = ScreenCenter
-  FormFactor.Width = 320
-  FormFactor.Height = 480
-  FormFactor.Devices = [Desktop]
+inherited MainForm: TMainForm
+  Caption = '__MainFormAncestor1'
   OnCreate = FormCreate
   DesignerMasterStyle = 0
-  object VertScrollBox1: TVertScrollBox
+  object VertScrollBox1: TVertScrollBox [1]
     Align = Client
     Size.Width = 640.000000000000000000
     Size.Height = 480.000000000000000000
@@ -131,54 +123,6 @@ object frmMain: TfrmMain
         TabOrder = 1
         Viewport.Width = 620.000000000000000000
         Viewport.Height = 148.000000000000000000
-      end
-    end
-  end
-  object OlfAboutDialog1: TOlfAboutDialog
-    Titre = 'Swap Keys Generator'
-    VersionNumero = '1.2'
-    VersionDate = '20240807'
-    MultiResBitmap = <
-      item
-      end>
-    Images = dmLogo.imgLogo
-    ImageIndex = 0
-    URL = 'https://swapkeysgenerator.olfsoftware.fr/'
-    onURLClick = OlfAboutDialog1URLClick
-    Langue = EN
-    Copyright = '2024 Patrick Pr'#233'martin'
-    ReplaceMainFormCaption = True
-    Left = 472
-    Top = 304
-  end
-  object MainMenu1: TMainMenu
-    Left = 536
-    Top = 264
-    object mnuMacOS: TMenuItem
-      Text = 'mnuMacOS'
-    end
-    object mnuFile: TMenuItem
-      Text = '&File'
-      object mnuQuit: TMenuItem
-        Locked = True
-        Text = '&Quit'
-        OnClick = mnuQuitClick
-      end
-    end
-    object mnuLanguages: TMenuItem
-      Text = '&Languages'
-      object mnuPascal: TMenuItem
-        Locked = True
-        Text = '&Pascal'
-        OnClick = mnuLanguageCodeClick
-      end
-    end
-    object mnuHelp: TMenuItem
-      Text = '&Help'
-      object mnuAbout: TMenuItem
-        Locked = True
-        Text = '&About'
-        OnClick = mnuAboutClick
       end
     end
   end

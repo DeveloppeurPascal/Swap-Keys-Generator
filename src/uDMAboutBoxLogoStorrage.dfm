@@ -1,4 +1,4 @@
-object dmLogo: TdmLogo
+object dmAboutBoxLogo: TdmAboutBoxLogo
   Height = 480
   Width = 640
   object imgLogo: TImageList
@@ -159,16 +159,16 @@ object dmLogo: TdmLogo
               C4AA36EBF3BD5DFDDF758687C3ACF762ABFF0726FEB2C9D6D6B1960000000049
               454E44AE426082}
             FileName = 
-              'C:\Users\patrickpremartin\Documents\Embarcadero\Studio\Projets\S' +
-              'wapKeysGenerator\assets\icons\SwapKeysGeneratorIcon-256x256.png'
+              'C:\Dev\Swap-Keys-Generator\assets\icons\SwapKeysGeneratorIcon-25' +
+              '6x256.png'
           end>
-        Name = 'SwapKeysGeneratorIcon-256x256'
+        Name = 'StarterKitDefaultIcon-256x256'
       end>
     Destination = <
       item
         Layers = <
           item
-            Name = 'SwapKeysGeneratorIcon-256x256'
+            Name = 'StarterKitDefaultIcon-256x256'
             SourceRect.Right = 256.000000000000000000
             SourceRect.Bottom = 256.000000000000000000
           end>
